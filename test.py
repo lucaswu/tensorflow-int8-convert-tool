@@ -43,7 +43,7 @@ class PreTrain(object):
         reader = VideoReader(video_name, pix_fmt='I420')
         [frame_num, fps, w, h] = [reader.frame_num, reader.fps, reader.w, reader.h]
 
-        num = 1#frame_num#min(100,frame_num)
+        num = frame_num#min(100,frame_num)
         x = graph.get_tensor_by_name(self.input_name)
         y = graph.get_tensor_by_name(self.output_name)
 
@@ -123,7 +123,7 @@ if __name__ == '__main__':
 
     print2(quan_name,type(quan_name),len(quan_name))
 
-    outDir = "test/"
+    outDir = "data/"
     for i in range(0,len(quan_name)):
         name = quan_name[i] +":0"
         preTrain = PreTrain(graph,2048,"src_input_1:0",name,outDir)
