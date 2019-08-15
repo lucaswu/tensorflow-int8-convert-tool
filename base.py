@@ -117,7 +117,6 @@ def mkdir(dir_path, empty_dir=True, isPrint=True):
     dir_path: path of the folder
     empty_dir: if the folder exists then delete all files in the folder.
     """
-    print(dir_path)
     import shutil
     if(empty_dir):
         if(os.path.exists(dir_path)):
